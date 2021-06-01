@@ -1,0 +1,142 @@
+@use 'abstracts/colors' as *;
+@use 'abstracts/fonts' as *;
+@use 'abstracts/typos' as *;
+
+:root {
+  font-size: 10px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Iosevka, sans-serif;
+  color: $clr-text;
+
+  &::selection {
+    background-color: $clr-primary;
+    color: $clr-dark;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background-color: $clr-bg;
+  overflow-x: hidden;
+}
+
+#__next {
+  width: 110rem;
+  max-width: 110rem;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0;
+  font-family: VT323, sans-serif;
+  text-transform: uppercase;
+  color: $clr-primary;
+}
+
+p {
+  margin-bottom: 0 !important;
+  line-height: 1.625em;
+}
+
+a {
+  text-decoration: none;
+  color: $clr-secondary;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+  margin: 0 0 0 1.5rem !important;
+}
+
+ol {
+  margin: 0 0 0 2.5rem !important;
+}
+
+li {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  > ul,
+  > ol {
+    margin: 1.5rem 0 0 1.5rem;
+  }
+}
+
+blockquote {
+  padding-left: 1em;
+  border-left: 0.3rem solid $clr-dark;
+  margin-left: 4rem;
+}
+
+.link {
+  background: 0% 100% linear-gradient(currentColor, currentColor) no-repeat;
+  background-size: 0% 0.2rem;
+
+  font-weight: 600;
+  transition: background-size ease-out 300ms;
+
+  &:hover,
+  &:focus {
+    color: $clr-secondary;
+    background-size: 100% 0.2rem;
+  }
+}
+
+/** Custom NES.CSS Framework */
+
+[class*='nes'],
+[class*='nes'] span {
+  font-family: VT323, sans-serif;
+}
+
+[class*='nes-container'][class*='with-title'] {
+  padding: 1.5rem 2rem 2rem;
+  margin: 0;
+
+  & > .title {
+    padding: 0 0.5em;
+    margin-top: -1.4em;
+    font-size: 2.4rem;
+    color: $clr-secondary !important;
+  }
+
+  &:hover {
+    border-color: $clr-primary;
+    transition: all ease-out 75ms;
+  }
+}
+
+[class*='nes-btn'] {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+[class='nes-badge'] {
+  width: unset;
+
+  span {
+    position: unset !important;
+    padding: 0.2rem 0.75rem;
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+}

@@ -1,0 +1,32 @@
+@use '../../../styles/abstracts/colors' as *;
+
+@mixin skeleton-spacing {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.75rem;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'header   header'
+    'content  sidebar';
+  grid-template-columns: 68.5rem auto;
+  gap: 6rem 13.5rem;
+}
+
+.header {
+  grid-area: header;
+  @include skeleton-spacing;
+  align-items: center;
+}
+
+.content,
+.sidebar {
+  @include skeleton-spacing;
+
+  * {
+    @include skeleton-spacing;
+    row-gap: 1.25rem;
+  }
+}

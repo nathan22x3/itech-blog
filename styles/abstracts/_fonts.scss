@@ -1,0 +1,24 @@
+$font-families: (
+  Iosevka: (
+    Light: 400,
+    Regular: 500,
+    Medium: 600,
+    Semibold: 700,
+    Bold: 800,
+  ),
+  VT323: (
+    Regular: 500,
+  ),
+);
+
+@each $font-family, $styles in $font-families {
+  @each $type, $weight in $styles {
+    @font-face {
+      font-family: $font-family;
+      src: url('/fonts/#{$font-family}/#{$font-family}-#{$type}.ttf');
+      font-style: normal;
+      font-weight: $weight;
+      font-display: swap;
+    }
+  }
+}

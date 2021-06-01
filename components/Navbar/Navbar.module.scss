@@ -1,0 +1,37 @@
+@use '../../styles/abstracts/colors' as *;
+
+$nav-height: 11rem;
+
+.container {
+  display: flex;
+  align-items: center;
+  column-gap: 6rem;
+
+  width: 100%;
+  height: $nav-height;
+  padding: 4rem 0 1rem 0;
+  margin: 0 auto 6.5rem auto;
+
+  background-color: $clr-bg;
+  z-index: 1;
+}
+
+.item {
+  font: {
+    family: VT323, sans-serif;
+    size: 2.8rem;
+    weight: 400;
+  }
+  line-height: 2.8rem;
+  text-transform: uppercase;
+  color: $clr-primary;
+
+  &::after {
+    all: unset;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $clr-secondary;
+  }
+}
