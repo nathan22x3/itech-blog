@@ -27,6 +27,8 @@
 
 .content {
   grid-area: content;
+  display: flex;
+  flex-direction: column;
   counter-reset: content;
 
   & > :not(h2, :last-child) {
@@ -53,30 +55,9 @@
       color: $clr-primary;
     }
   }
-}
 
-.image {
-  position: relative !important;
-  height: unset !important;
-  object-fit: contain;
-  border-radius: 1rem;
-
-  &Wrapper {
-    display: flex;
-    flex-direction: column;
-    row-gap: 1.5rem;
-
-    width: 60rem;
-    margin: 0 auto;
-
-    & > div {
-      position: unset !important;
-    }
-  }
-
-  &Caption {
-    text-align: center;
-    font-size: 0.8em;
+  [class*='CustomImage'] {
+    align-self: center;
   }
 }
 

@@ -1,12 +1,12 @@
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
 import { createClient } from 'contentful';
-import Image from 'next/image';
-import Link from 'next/link';
 import Head from 'next/head';
-import styles from '../../styles/Post.module.scss';
+import Link from 'next/link';
 import slugify from 'slugify';
+import CustomImage from '../../components/Custom/Image';
 import PostSkeleton from '../../components/Skeleton/PostSkeleton';
+import styles from '../../styles/Post.module.scss';
 
 const Post = ({ post }) => {
   if (!post) return <PostSkeleton />;
@@ -30,16 +30,12 @@ const Post = ({ post }) => {
         } = node.data.target.fields;
 
         return (
-          <div className={styles.imageWrapper}>
-            <Image
-              className={styles.image}
-              src={`https:${url}`}
-              alt={title}
-              title={title}
-              layout='fill'
-            />
-            <span className={styles.imageCaption}>{description || title}</span>
-          </div>
+          <CustomImage
+            url={`https:${url}`}
+            {...{ title }}
+            {...{ description }}
+            width={600}
+          />
         );
       },
       [INLINES.HYPERLINK]: ({ content, data: { uri } }) => {
