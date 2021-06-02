@@ -9,20 +9,10 @@
   grid-template-columns: 68.5rem auto;
   gap: 6rem 13.5rem;
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 480px) {
     grid-template-areas: 'header' 'content';
     grid-template-columns: 1fr;
     gap: 4rem 0 !important;
-
-    max-width: 39rem;
-    width: 39rem;
-    margin: 0 auto;
-
-    .header,
-    .content {
-      width: 39rem;
-      max-width: 39rem;
-    }
 
     .content {
       h2 {
@@ -60,7 +50,7 @@
 
 .tags {
   font-family: VT323, sans-serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: $clr-secondary;
 }
 

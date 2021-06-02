@@ -5,12 +5,14 @@
   height: 10rem;
   margin-top: 6rem;
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 480px) {
     margin-top: 2rem;
+  }
 
-    // p {
-    //   width: 20rem;
-    //   text-align: center;
-    // }
+  @media only screen and (max-width: 410px) {
+    p {
+      width: 20rem;
+      text-align: center;
+    }
   }
 }

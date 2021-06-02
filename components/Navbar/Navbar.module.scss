@@ -15,10 +15,9 @@ $nav-height: 11rem;
   background-color: $clr-bg;
   z-index: 1;
 
-  @media only screen and (max-width: 450px) {
-    width: 39rem;
+  @media only screen and (max-width: 480px) {
     padding-top: 0;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 
     .item:not(:first-child) {
       display: none;
