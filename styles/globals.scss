@@ -38,8 +38,8 @@ body {
   max-width: 110rem;
   min-height: 100vh;
 
-  @media (max-width: 375px) {
-    padding: 2.5rem 3rem;
+  @media (max-width: 450px) {
+    padding: 0 3rem 2.5rem;
   }
 }
 
