@@ -34,7 +34,7 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 
-  @media (max-width: 375px) {
+  @media only screen and (max-width: 450px) {
     -webkit-line-clamp: 5;
   }
 }
