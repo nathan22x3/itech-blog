@@ -17,7 +17,7 @@ const Home = ({ posts }) => {
       </Head>
       <main className={styles.container}>
         <section className={styles.newest}>
-          <h2>Bài viết gần đây</h2>
+          <h3>Bài viết gần đây</h3>
           <div className={styles.newestList}>
             {posts.map((post) => (
               <PostCard key={post.sys.id} {...{ post }} />
@@ -25,7 +25,7 @@ const Home = ({ posts }) => {
           </div>
         </section>
         <aside className={styles.highlight}>
-          <h2>Chủ đề nổi bật</h2>
+          <h3>Chủ đề nổi bật</h3>
           <div className={styles.highlightList}>
             {tags.map((tag) => (
               <Link href='#' key={tag}>

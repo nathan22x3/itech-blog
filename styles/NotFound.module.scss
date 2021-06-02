@@ -6,6 +6,38 @@
     'message message'
     'content illustrator';
   grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (max-width: 480px) {
+    grid-template-areas: 'message' 'illustrator' 'content';
+    grid-template-columns: 1fr;
+    row-gap: 3rem;
+
+    .message {
+      font-size: 3.5rem;
+      text-align: center;
+    }
+
+    .illustrator {
+      span {
+        font-size: 15rem;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 3rem;
+
+      span {
+        font-size: 1.6rem;
+
+        &:first-child {
+          text-align: center;
+        }
+      }
+    }
+  }
 }
 
 .message {
@@ -24,6 +56,7 @@
 
   span {
     font-size: 1.8rem;
+    line-height: 1.675em;
   }
 }
 

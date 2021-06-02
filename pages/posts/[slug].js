@@ -41,7 +41,7 @@ const Post = ({ post }) => {
         const { value } = content[0];
 
         return (
-          <Link href={uri} key={value}>
+          <Link key={value} href={uri}>
             <a className={'link'} target='_blank' rel='noopener noreferrer'>
               {value}
             </a>
@@ -72,9 +72,12 @@ const Post = ({ post }) => {
 
               return (
                 <li key={value}>
-                  <Link href={`#${slugify(value).toLowerCase()}`}>
-                    <a className={'link'}>{value}</a>
-                  </Link>
+                  <a
+                    className={'link'}
+                    href={`#${slugify(value).toLowerCase()}`}
+                  >
+                    {value}
+                  </a>
                 </li>
               );
             })}

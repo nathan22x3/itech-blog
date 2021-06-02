@@ -7,7 +7,7 @@ const PostCard = ({ post }) => {
   return (
     <Link href={`/posts/${slug}`}>
       <a className={`${styles.container}`}>
-        <h3 className={`${styles.title} title`}>{title}</h3>
+        <h2 className={`${styles.title} title`}>{title}</h2>
         <p className={styles.shortDesc}>{shortDesc}</p>
         <span className={`${styles.readMore}`}>Đọc tiếp</span>
       </a>

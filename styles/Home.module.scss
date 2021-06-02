@@ -1,9 +1,9 @@
 @use './abstracts/colors' as *;
 
 .container {
+  position: relative;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 
   @media only screen and (max-width: 480px) {
     flex-direction: column;
@@ -31,6 +31,10 @@
 }
 
 .highlight {
+  align-self: flex-start;
+  position: sticky;
+  top: 11rem;
+
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
