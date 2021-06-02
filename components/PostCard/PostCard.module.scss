@@ -5,17 +5,30 @@
   flex-direction: column;
   row-gap: 1.5rem;
   border-color: $clr-text;
-  background-color: $clr-bg !important;
+
+  &:hover {
+    .title {
+      color: $clr-primary;
+    }
+
+    .readMore {
+      &::after {
+        color: $clr-secondary;
+        animation: typewriter 400ms steps(4) forwards;
+      }
+    }
+  }
 }
 
 .title {
   align-self: flex-start;
   font-family: VT323, sans-serif;
-  background-color: $clr-bg !important;
   text-transform: uppercase;
+  color: $clr-secondary;
+  transition: color ease-out 150ms;
 }
 
-.briefContent {
+.shortDesc {
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -24,4 +37,37 @@
 
 .readMore {
   align-self: flex-start;
+  position: relative;
+  font-weight: bold;
+  color: $clr-secondary;
+
+  &::before {
+    position: absolute;
+    content: '⟶›››';
+    right: -90%;
+
+    display: block;
+    width: 4.8rem;
+    color: $clr-secondary;
+    transition: color ease-out 300ms;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    right: -90%;
+
+    display: block;
+    width: 3.2rem;
+    height: 100%;
+    background-color: $clr-bg;
+    transition: right ease-out 400ms;
+
+    @keyframes typewriter {
+      to {
+        right: -140%;
+      }
+    }
+  }
 }

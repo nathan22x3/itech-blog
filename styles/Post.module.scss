@@ -27,8 +27,6 @@
 
 .content {
   grid-area: content;
-  display: flex;
-  flex-direction: column;
   counter-reset: content;
 
   & > :not(h2, :last-child) {
@@ -42,10 +40,12 @@
     counter-increment: content;
 
     &::before {
+      $offset-top: 2.5em;
+
       content: '';
       display: block;
-      height: 12rem;
-      margin: -12rem 0 0;
+      height: $offset-top;
+      margin: -$offset-top 0 0;
     }
 
     &::marker {
@@ -57,7 +57,7 @@
   }
 
   [class*='CustomImage'] {
-    align-self: center;
+    margin: 0 auto;
   }
 }
 

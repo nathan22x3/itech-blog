@@ -3,6 +3,9 @@ $typos: (
   h2: 2.8rem,
   h3: 2.4rem,
   h4: 1.875rem,
+  p: 1.6rem,
+  span: 1.6rem,
+  a: 1.6rem,
 );
 
 @each $typo, $size in $typos {

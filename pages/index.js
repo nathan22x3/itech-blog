@@ -3,8 +3,13 @@ import Link from 'next/link';
 import PostCard from '../components/PostCard';
 import styles from '../styles/Home.module.scss';
 import { createClient } from 'contentful';
+import { useState } from 'react';
 
 const Home = ({ posts }) => {
+  const [tags, setTags] = useState(() => [
+    ...new Set(posts.map((post) => post.fields.tags).flat()),
+  ]);
+
   return (
     <>
       <Head>
@@ -22,31 +27,13 @@ const Home = ({ posts }) => {
         <aside className={styles.highlight}>
           <h2>Chủ đề nổi bật</h2>
           <div className={styles.highlightList}>
-            <Link href='#'>
-              <a className={`nes-badge`}>
-                <span className={'is-error'}>Today I Learned</span>
-              </a>
-            </Link>
-            <Link href='#'>
-              <a className={`nes-badge`}>
-                <span className={'is-error'}>Git</span>
-              </a>
-            </Link>
-            <Link href='#'>
-              <a className={`nes-badge`}>
-                <span className={'is-error'}>Big Data</span>
-              </a>
-            </Link>
-            <Link href='#'>
-              <a className={`nes-badge`}>
-                <span className={'is-error'}>Cryptography</span>
-              </a>
-            </Link>
-            <Link href='#'>
-              <a className={`nes-badge`}>
-                <span className={'is-error'}>Artificial Intelligence</span>
-              </a>
-            </Link>
+            {tags.map((tag) => (
+              <Link href='#' key={tag}>
+                <a className={`nes-badge`}>
+                  <span className={'is-error'}>{tag}</span>
+                </a>
+              </Link>
+            ))}
           </div>
         </aside>
       </main>
