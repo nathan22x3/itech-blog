@@ -34,7 +34,6 @@ const Post = ({ post }) => {
             url={`https:${url}`}
             {...{ title }}
             {...{ description }}
-            width={600}
           />
         );
       },

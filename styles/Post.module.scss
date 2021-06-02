@@ -2,13 +2,49 @@
 
 .container {
   position: relative;
-
   display: grid;
   grid-template-areas:
     'header   header'
     'content  sidebar';
   grid-template-columns: 68.5rem auto;
   gap: 6rem 13.5rem;
+
+  @media (max-width: 375px) {
+    grid-template-areas: 'header' 'content';
+    grid-template-columns: 1fr;
+    gap: 4rem 0 !important;
+    width: 31.5rem;
+    margin: 0 auto;
+
+    .header,
+    .content {
+      width: 31.5rem;
+    }
+
+    .content {
+      h2 {
+        display: block;
+        padding-left: 0;
+      }
+
+      blockquote {
+        margin-left: 2rem;
+      }
+
+      [class*='CustomImage'] {
+        width: 100% !important;
+        border-radius: 0.5em;
+      }
+    }
+
+    .header {
+      align-items: flex-start;
+    }
+
+    .sidebar {
+      display: none;
+    }
+  }
 }
 
 .header {
@@ -58,6 +94,7 @@
 
   [class*='CustomImage'] {
     margin: 0 auto;
+    width: 60rem !important;
   }
 }
 

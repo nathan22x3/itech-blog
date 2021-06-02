@@ -14,6 +14,16 @@ $nav-height: 11rem;
 
   background-color: $clr-bg;
   z-index: 1;
+
+  @media (max-width: 375px) {
+    width: 31.5rem;
+    padding-top: 0;
+    margin-bottom: 5rem;
+
+    .item:not(:first-child) {
+      display: none;
+    }
+  }
 }
 
 .item {
